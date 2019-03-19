@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CreateMonster : MonoBehaviour {
 
-   
 
     public List<GameObject> respawnSpotList;
+
 
     public GameObject monster1Prefab;
     public GameObject monster2Prefab;
@@ -17,7 +17,8 @@ public class CreateMonster : MonoBehaviour {
     private int spawnCount = 0;
 
     void Start () {
-       
+        
+
         monsterPrefab = monster1Prefab;
         lastSpawnTime = Time.time;
        
@@ -37,6 +38,7 @@ public class CreateMonster : MonoBehaviour {
                 GameObject respawnSpot = respawnSpotList[index];
                 
                 Instantiate(monsterPrefab, respawnSpot.transform.position, Quaternion.identity);
+                GameManager.instance.monsterAddCount++;
                 spawnCount += 1;
             }
             if(spawnCount == GameManager.instance.spawnNumber &&

@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour {
     }
 
 
+    public int monsterAddCount = 0;
+    public int characterAddCount = 0;
+    public int bulletAddCount = 0;
+
 
     public Text seedText;
     public Text roundText;
@@ -92,6 +96,9 @@ public class GameManager : MonoBehaviour {
             spawnTime -= 0.2f;
             spawnNumber += 3;
             reward += 150;
+            Debug.Log("총알 : " + bulletAddCount);
+            Debug.Log("캐릭터 : " + characterAddCount);
+            Debug.Log("몬스터 : " + monsterAddCount);
         }
     }
 
